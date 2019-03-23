@@ -1,27 +1,46 @@
 ```
 <html lang="zh-TW"><head>
   <meta charset="UTF-8">
-  <title>葉問打光頭</title>
+  <title>打地鼠</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
+    
+<form>
+  <h2>地鼠種類</h2>
+ <font size="5">
+<input type="radio" name="dept" value="octopus" checked> 章魚怪
+<br>
+<input type="radio" name="dept" value="insect" > 小蟲子
+<br>
+<input type="radio" name="dept" value="man" > 光頭男
+<br>
+</font>
+    
+<h2>選擇地洞數量</h2>
  <form>
-<select name="數量">
+<select name="animals" id="animals" onchange="print_value();">
 　<option value="three">3</option>
 　<option value="four">4</option>
 　<option value="five">5</option>
-　<option value="six">6</option>
-</select>     
-</form>
-    
-<body class="bod">
-  <h1>葉問打光頭 得分:
-    <span class="score">0</span>
-  </h1>
-    
+</select> 
+</form>   
+ 
+<div style="text-align:center;widht:300px;line-height:60px;border:1px"> 
+<body class="body">
+<font size="80">
+打地鼠 得分:
+<span class="score">0</span> 
+</font>
+    </body> 
+</div>
     
  <head>
 <script type="text/javascript">
+    function print_value() {
+	<!-- 將 select 的值在印出 -->
+	document.getElementById("result").innerHTML = document.getElementById("number").value
+}
 function timedMsg()
 {
 var t=setTimeout("alert('時間到!!')",20000)
@@ -29,45 +48,20 @@ var t=setTimeout("alert('時間到!!')",20000)
 </script>
 </head>
 
+    
 <body>
 <form>
+  <div style="text-align:center;widht:300px;line-height:60px;border:1px">   
 <div class="startBtn">
 <input type="button" value="遊戲開始" onclick="timedMsg();startGame()">
-</div>
+</div> 
+</div>     
 </form>
-<p>請點選上面的按钮 遊戲20秒倒數計時</p>
-</body>  
+<h2>請點選上面的按鈕 遊戲20秒倒數計時</h2>
+</body> 
   
-
-  <div class="game">
-    <div class="hole hole1">
-      <div class="mole"></div>
-    </div>
-    <div class="hole hole2">
-      <div class="mole"></div>
-    </div>
-    <div class="hole hole3">
-      <div class="mole"></div>
-    </div>
-    <div class="hole hole4">
-      <div class="mole"></div>
-    </div>
-    <div class="hole hole5">
-      <div class="mole"></div>
-    </div>
-    <div class="hole hole6">
-      <div class="mole"></div>
-    </div>
-      <div class="hole hole7">
-      <div class="mole"></div>
-    </div>
-      <div class="hole hole8">
-      <div class="mole"></div>
-    </div>
-    <div class="hole hole9">
-      <div class="mole"></div>
-    </div>
-  </div>
+    <!-- 印出結果 -->
+<div id="result"></div>
 
   <script>
     /**  取得頁面元素 */
@@ -145,8 +139,37 @@ var t=setTimeout("alert('時間到!!')",20000)
 
     // 替每個地鼠加上click事件綁定bonk（打地鼠）
     moles.forEach(mole => mole.addEventListener('click', bonk));
+      
   </script>
+<div class="game">
+    <div class="hole 1">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 2">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 3">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 4">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 5">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 6">
+      <div class="mole"></div>
+    </div>
+      <div class="hole 7">
+      <div class="mole"></div>
+    </div>
+      <div class="hole 8">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 9">
+      <div class="mole"></div>
+    </div>
+  </div>
 
-
-</body></html>
+    </form></html>
 ```
