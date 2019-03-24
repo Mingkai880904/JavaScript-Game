@@ -24,8 +24,11 @@
 　<option value="four">4</option>
 　<option value="five">5</option>
 </select> 
+<div id="result"></div>    
 </form>   
- 
+  
+
+
 <div style="text-align:center;widht:300px;line-height:60px;border:1px"> 
 <body class="body">
 <font size="80">
@@ -39,7 +42,7 @@
 <script type="text/javascript">
     function print_value() {
 	<!-- 將 select 的值在印出 -->
-	document.getElementById("result").innerHTML = document.getElementById("number").value
+	document.getElementById("result").innerHTML = document.getElementById("animals").value
 }
 function timedMsg()
 {
@@ -57,11 +60,9 @@ var t=setTimeout("alert('時間到!!')",20000)
 </div> 
 </div>     
 </form>
-<h2>請點選上面的按鈕 遊戲20秒倒數計時</h2>
+<h2>請點選"遊戲開始"按鈕 遊戲20秒倒數計時</h2>
 </body> 
-  
-    <!-- 印出結果 -->
-<div id="result"></div>
+    
 
   <script>
     /**  取得頁面元素 */
@@ -141,6 +142,7 @@ var t=setTimeout("alert('時間到!!')",20000)
     moles.forEach(mole => mole.addEventListener('click', bonk));
       
   </script>
+    
 <div class="game">
     <div class="hole 1">
       <div class="mole"></div>
@@ -172,4 +174,3 @@ var t=setTimeout("alert('時間到!!')",20000)
   </div>
 
     </form></html>
-```
