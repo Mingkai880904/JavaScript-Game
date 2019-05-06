@@ -1,70 +1,90 @@
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <title>打地鼠</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
     
-<form>
-  <h2>地鼠種類</h2>
- <font size="5">
-<input type="radio" name="dept" value="octopus" checked> 章魚怪
+      
+   <h1>打地鼠
+    <span class="score">0</span>
+  </h1>
+  <div class="controllArea">
+    <div class="startBtn" onClick="startGame()">[Start!]</div>
+  </div>
+    
+<form name="form_name" id="form_name">
+<!--radio用法-->
+<font size="5">    
+<label><input type="radio" name="dept" value="octopus" checked> 章魚怪 </label>
 <br>
-<input type="radio" name="dept" value="insect" > 小蟲子
+<label><input type="radio" name="dept" value="insect" > 小蟲子 </label>
 <br>
-<input type="radio" name="dept" value="man" > 光頭男
+<label><input type="radio" name="dept" value="man" > 光頭男 </label>
 <br>
-</font>
-    
-<h2>選擇地洞數量</h2>
- <form>
-<select name="animals" id="animals" onchange="print_value();">
-　<option value="three">3</option>
-　<option value="four"SELECTED>4</option>
-　<option value="five">5</option>
-</select> 
-<div id="result"></div>    
-</form>   
-  
-
-
-<div style="text-align:center;widht:300px;line-height:60px;border:1px"> 
-<body class="body">
-<font size="80">
-打地鼠 得分:
-<span class="score">0</span> 
-</font>
-    </body> 
-</div>
-    
- <head>
-<script type="text/javascript">
-    function print_value() {
-	<!-- 將 select 的值在印出 -->
-	document.getElementById("result").innerHTML = document.getElementById("animals").value
-}
-function timedMsg()
-{
-var timedMsg()=setTimeout("alert('時間到!!')",20000)
-}
-</script>
-</head>
-
-    
-<body>
-<form>
-  <div style="text-align:center;widht:300px;line-height:60px;border:1px">   
-<div class="startBtn">
-<input type="button" value="遊戲開始" onclick="timedMsg();startGame()">
-</div> 
-</div>     
+ </font>   
 </form>
-<h2>請點選"遊戲開始"按鈕 遊戲20秒倒數計時</h2>
-</body> 
+
+    
+<script src="https://code.jquery.com/jquery-3.4.0.js"></script>    
+ <select id="select" onclick="myfunction()">
+　<option value="3">3</option>
+　<option value="4">4</option>
+　<option selected value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>  
+
+<body>
+     <div class="game" id="number">
+    <div class="hole 1">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 2">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 3">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 4">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 5">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 6">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 7">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 8">
+      <div class="mole"></div>
+    </div>
+    <div class="hole 9">
+      <div class="mole"></div>
+    </div>   
+ </div>      
+ </body>
+    
+    
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("select");
+  var y = document.getElementById("number")    
+  if (x.value==="3"){
+export type Result===(y.class.hole 4;hole 5;hole 6;hole 7;hole 8;hole 9)='hidden';
+  }
+</script>  
+    
     
 
-  <script>
+ 
+
+ <script>
     /**  取得頁面元素 */
     const holes = document.querySelectorAll('.hole');
     const scoreBoard = document.querySelector('.score');
@@ -97,7 +117,7 @@ var timedMsg()=setTimeout("alert('時間到!!')",20000)
     /**  地鼠出現 */
     function peep() {
       // 取得存在時間
-      const time = randomTime(100, 1000);
+      const time = randomTime(100, 900);
       // 取得出現的洞
       const hole = randomHole(holes);
       // 移除已槌標記
@@ -140,37 +160,5 @@ var timedMsg()=setTimeout("alert('時間到!!')",20000)
 
     // 替每個地鼠加上click事件綁定bonk（打地鼠）
     moles.forEach(mole => mole.addEventListener('click', bonk));
-      
-  </script>
-    
-<div class="game">
-    <div class="hole 1">
-      <div class="mole"></div>
-    </div>
-    <div class="hole 2">
-      <div class="mole"></div>
-    </div>
-    <div class="hole 3">
-      <div class="mole"></div>
-    </div>
-    <div class="hole 4">
-      <div class="mole"></div>
-    </div>
-    <div class="hole 5">
-      <div class="mole"></div>
-    </div>
-    <div class="hole 6">
-      <div class="mole"></div>
-    </div>
-      <div class="hole 7">
-      <div class="mole"></div>
-    </div>
-      <div class="hole 8">
-      <div class="mole"></div>
-    </div>
-    <div class="hole 9">
-      <div class="mole"></div>
-    </div>
-  </div>
-
-    </form></html>
+  </script>  
+ </html>
